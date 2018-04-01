@@ -8,15 +8,11 @@
 
 struct R {
     
-    struct Segue {
-        static let showMap = "showMap"
-    }
-    
-    struct Cell {
-        static let location = "locationCell"
-    }
-    
     struct String {
+        static let ok = "OK"
+        static let settings = "Settings"
+        static let locationFailed = "Unable to get your location, please update your settings in order to MapSearch to work"
         static let searchLocationPlaceholder = "Search locations"
     }
+    
 }
