@@ -17,6 +17,11 @@
 		89A39114207049000095EEB4 /* mapsearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A39113207049000095EEB4 /* mapsearchTests.swift */; };
 		89A3911F207049000095EEB4 /* mapsearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A3911E207049000095EEB4 /* mapsearchUITests.swift */; };
 		89A3912F20704EF80095EEB4 /* R.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A3912E20704EF80095EEB4 /* R.swift */; };
+		89B05390207103AE002ADA48 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B0538B207103AD002ADA48 /* NetworkManager.swift */; };
+		89B05391207103AE002ADA48 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B0538C207103AD002ADA48 /* EndPointType.swift */; };
+		89B05392207103AE002ADA48 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B0538D207103AD002ADA48 /* NetworkRouter.swift */; };
+		89B05393207103AE002ADA48 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B0538E207103AE002ADA48 /* Router.swift */; };
+		89B05394207103AE002ADA48 /* ParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B0538F207103AE002ADA48 /* ParameterEncoder.swift */; };
 		B377B151CD8825C09659EF30 /* Pods_mapsearchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C983B4FCC76EB449B669BA /* Pods_mapsearchTests.framework */; };
 		FB7B10BAC2C504A203F4DD5C /* Pods_mapsearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8264CA7B42ABCAFCB8D8ED24 /* Pods_mapsearch.framework */; };
 /* End PBXBuildFile section */
@@ -58,6 +63,11 @@
 		89A3911E207049000095EEB4 /* mapsearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapsearchUITests.swift; sourceTree = "<group>"; };
 		89A39120207049000095EEB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89A3912E20704EF80095EEB4 /* R.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.swift; sourceTree = "<group>"; };
+		89B0538B207103AD002ADA48 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		89B0538C207103AD002ADA48 /* EndPointType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
+		89B0538D207103AD002ADA48 /* NetworkRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
+		89B0538E207103AE002ADA48 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		89B0538F207103AE002ADA48 /* ParameterEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParameterEncoder.swift; sourceTree = "<group>"; };
 		99C983B4FCC76EB449B669BA /* Pods_mapsearchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mapsearchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B2F8F900B28413743817D06 /* Pods-mapsearchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mapsearchUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-mapsearchUITests/Pods-mapsearchUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D6ED715AC29D4FD3A41FC0B9 /* Pods-mapsearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mapsearch.release.xcconfig"; path = "Pods/Target Support Files/Pods-mapsearch/Pods-mapsearch.release.xcconfig"; sourceTree = "<group>"; };
@@ -157,6 +167,7 @@
 		89A390FB207048FF0095EEB4 /* MapSearch */ = {
 			isa = PBXGroup;
 			children = (
+				89B0538A2071038A002ADA48 /* Networking */,
 				899ACC482070513F00CAF7AC /* Scene */,
 				8968F2572070511200AF2AE0 /* Model */,
 				89A3912D20704EE30095EEB4 /* Resources */,
@@ -207,6 +218,18 @@
 			children = (
 			);
 			name = Services;
+			sourceTree = "<group>";
+		};
+		89B0538A2071038A002ADA48 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				89B0538C207103AD002ADA48 /* EndPointType.swift */,
+				89B0538B207103AD002ADA48 /* NetworkManager.swift */,
+				89B0538D207103AD002ADA48 /* NetworkRouter.swift */,
+				89B0538F207103AE002ADA48 /* ParameterEncoder.swift */,
+				89B0538E207103AE002ADA48 /* Router.swift */,
+			);
+			name = Networking;
 			sourceTree = "<group>";
 		};
 		94F18A9D79D12B401FDA000F /* Frameworks */ = {
@@ -511,10 +534,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89B05393207103AE002ADA48 /* Router.swift in Sources */,
 				89A39101207048FF0095EEB4 /* MapViewController.swift in Sources */,
 				89A390FF207048FF0095EEB4 /* SearchMapViewController.swift in Sources */,
+				89B05394207103AE002ADA48 /* ParameterEncoder.swift in Sources */,
+				89B05391207103AE002ADA48 /* EndPointType.swift in Sources */,
+				89B05390207103AE002ADA48 /* NetworkManager.swift in Sources */,
 				89A390FD207048FF0095EEB4 /* AppDelegate.swift in Sources */,
 				89A3912F20704EF80095EEB4 /* R.swift in Sources */,
+				89B05392207103AE002ADA48 /* NetworkRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
