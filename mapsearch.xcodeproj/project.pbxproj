@@ -8,8 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		6631CD56C5E727FD8CCFFD36 /* Pods_mapsearchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E64B7A04541CC3DBA81187AF /* Pods_mapsearchUITests.framework */; };
+		89762B3920710AAA001AE3E7 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89762B3820710AAA001AE3E7 /* Location.swift */; };
+		89762B3C20711198001AE3E7 /* UIViewController+PresentAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89762B3B20711198001AE3E7 /* UIViewController+PresentAlert.swift */; };
+		89762B7A20711C30001AE3E7 /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89762B7920711C30001AE3E7 /* UIView+Utils.swift */; };
+		89762B8120713B28001AE3E7 /* BlurredUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89762B8020713B28001AE3E7 /* BlurredUIView.swift */; };
 		89A390FD207048FF0095EEB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A390FC207048FF0095EEB4 /* AppDelegate.swift */; };
-		89A390FF207048FF0095EEB4 /* SearchMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A390FE207048FF0095EEB4 /* SearchMapViewController.swift */; };
 		89A39101207048FF0095EEB4 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A39100207048FF0095EEB4 /* MapViewController.swift */; };
 		89A39104207048FF0095EEB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89A39102207048FF0095EEB4 /* Main.storyboard */; };
 		89A39106207049000095EEB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89A39105207049000095EEB4 /* Assets.xcassets */; };
@@ -48,9 +51,12 @@
 		4137A82F435B99C7271246AC /* Pods-mapsearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mapsearch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mapsearch/Pods-mapsearch.debug.xcconfig"; sourceTree = "<group>"; };
 		420E00D6C3F01B4272271922 /* Pods-mapsearchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mapsearchTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mapsearchTests/Pods-mapsearchTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8264CA7B42ABCAFCB8D8ED24 /* Pods_mapsearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mapsearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		89762B3820710AAA001AE3E7 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		89762B3B20711198001AE3E7 /* UIViewController+PresentAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+PresentAlert.swift"; sourceTree = "<group>"; };
+		89762B7920711C30001AE3E7 /* UIView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
+		89762B8020713B28001AE3E7 /* BlurredUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurredUIView.swift; sourceTree = "<group>"; };
 		89A390F9207048FF0095EEB4 /* mapsearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mapsearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89A390FC207048FF0095EEB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		89A390FE207048FF0095EEB4 /* SearchMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMapViewController.swift; sourceTree = "<group>"; };
 		89A39100207048FF0095EEB4 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		89A39103207048FF0095EEB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		89A39105207049000095EEB4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -121,6 +127,7 @@
 			children = (
 				8968F2582070511F00AF2AE0 /* Storage */,
 				89A39130207050E40095EEB4 /* Services */,
+				89762B3820710AAA001AE3E7 /* Location.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -132,10 +139,26 @@
 			name = Storage;
 			sourceTree = "<group>";
 		};
+		89762B3A20711186001AE3E7 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				89762B7920711C30001AE3E7 /* UIView+Utils.swift */,
+				89762B3B20711198001AE3E7 /* UIViewController+PresentAlert.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		89762B7F20713B1A001AE3E7 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				89762B8020713B28001AE3E7 /* BlurredUIView.swift */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
 		899ACC482070513F00CAF7AC /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				89A390FE207048FF0095EEB4 /* SearchMapViewController.swift */,
 				89A39100207048FF0095EEB4 /* MapViewController.swift */,
 				89A39102207048FF0095EEB4 /* Main.storyboard */,
 			);
@@ -167,6 +190,8 @@
 		89A390FB207048FF0095EEB4 /* MapSearch */ = {
 			isa = PBXGroup;
 			children = (
+				89762B7F20713B1A001AE3E7 /* Components */,
+				89762B3A20711186001AE3E7 /* Utils */,
 				89B0538A2071038A002ADA48 /* Networking */,
 				899ACC482070513F00CAF7AC /* Scene */,
 				8968F2572070511200AF2AE0 /* Model */,
@@ -536,13 +561,16 @@
 			files = (
 				89B05393207103AE002ADA48 /* Router.swift in Sources */,
 				89A39101207048FF0095EEB4 /* MapViewController.swift in Sources */,
-				89A390FF207048FF0095EEB4 /* SearchMapViewController.swift in Sources */,
+				89762B3920710AAA001AE3E7 /* Location.swift in Sources */,
 				89B05394207103AE002ADA48 /* ParameterEncoder.swift in Sources */,
 				89B05391207103AE002ADA48 /* EndPointType.swift in Sources */,
 				89B05390207103AE002ADA48 /* NetworkManager.swift in Sources */,
 				89A390FD207048FF0095EEB4 /* AppDelegate.swift in Sources */,
 				89A3912F20704EF80095EEB4 /* R.swift in Sources */,
 				89B05392207103AE002ADA48 /* NetworkRouter.swift in Sources */,
+				89762B7A20711C30001AE3E7 /* UIView+Utils.swift in Sources */,
+				89762B3C20711198001AE3E7 /* UIViewController+PresentAlert.swift in Sources */,
+				89762B8120713B28001AE3E7 /* BlurredUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
