@@ -12,7 +12,7 @@ final class BlurredUIView: UIView {
     
     @IBInspectable var blurBackground: Bool = false {
         didSet {
-            removeBlurEffect()
+            removeBlurEffectIfNeeded()
             if blurBackground {
                 addBlurEffect()
             }
@@ -28,7 +28,7 @@ final class BlurredUIView: UIView {
         insertSubview(blurEffectView, at: 0)
     }
     
-    private func removeBlurEffect() {
+    private func removeBlurEffectIfNeeded() {
         let blurredEffectViews = subviews.filter {$0 is UIVisualEffectView}
         blurredEffectViews.forEach { $0.removeFromSuperview() }
     }

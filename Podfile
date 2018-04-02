@@ -7,6 +7,8 @@ target 'mapsearch' do
 
   # Pods for mapsearch
   pod 'Mapbox-iOS-SDK', '~> 3.7'
+  pod 'MapboxGeocoder.swift', '~> 0.8'
+  pod 'Hero', '~> 1.1'
 
   target 'mapsearchTests' do
     inherit! :search_paths
