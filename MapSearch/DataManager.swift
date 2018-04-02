@@ -21,4 +21,12 @@ final class DataManager {
             completion(locations)
         }
     }
+    
+    func getLocation(coordinate: (latitude: Double, longitude: Double),
+                     completion: @escaping (Location?) -> Void) {
+        
+        LocationService().getLocation(coordinate: coordinate) { location in
+            completion(location)
+        }
+    }
 }

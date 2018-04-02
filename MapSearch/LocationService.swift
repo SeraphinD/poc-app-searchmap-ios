@@ -14,6 +14,7 @@ final class LocationService {
     private let geocoder = Geocoder.shared
     
     func searchLocations(_ query: String, completion: @escaping ([Location]?) -> Void) {
+        
         let options = ForwardGeocodeOptions(query: query)
         
         options.allowedScopes = [.address, .pointOfInterest]
@@ -21,6 +22,24 @@ final class LocationService {
         geocoder.geocode(options) { (placemarks, attribution, error) in
             let locations = placemarks?.compactMap { Location(geocodedPlacemark: $0) }
             completion(locations)
+        }
+    }
+    
+    func getLocation(coordinate: (latitude: Double, longitude: Double),
+                     completion: @escaping (Location?) -> Void) {
+        
+        let options = ReverseGeocodeOptions(coordinate:
+            CLLocationCoordinate2D(latitude: coordinate.latitude,
+                                   longitude: coordinate.longitude))
+        
+        options.allowedScopes = [.address, .pointOfInterest]
+        
+        geocoder.geocode(options) { (placemarks, attribution, error) in
+            guard let placemark = placemarks?.first else {
+                completion(nil)
+                return
+            }
+            completion(Location(geocodedPlacemark: placemark))
         }
     }
 }
