@@ -63,10 +63,12 @@ extension UIView {
     
     @IBInspectable var shadowOffset: CGPoint {
         set {
-            layer.shadowOffset = CGSize(width: newValue.x, height: newValue.y)
+            layer.shadowOffset = CGSize(width: newValue.x,
+                                        height: newValue.y)
         }
         get {
-            return CGPoint(x: layer.shadowOffset.width, y:layer.shadowOffset.height)
+            return CGPoint(x: layer.shadowOffset.width,
+                           y:layer.shadowOffset.height)
         }
     }
     

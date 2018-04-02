@@ -11,9 +11,13 @@ import UIKit
 extension UIViewController {
     
     func presentAlertLocation(title: String, message: String? = nil) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: R.String.ok, style: .default) { (action) in }
-        let settingsAction = UIAlertAction(title: R.String.settings, style: .cancel) { action in
+        let alert = UIAlertController(title: title,
+                                      message: message,
+                                      preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: R.String.ok,
+                                        style: .default) { (action) in }
+        let settingsAction = UIAlertAction(title: R.String.settings,
+                                           style: .cancel) { action in
             guard let settingsUrl = URL(string: UIApplicationOpenSettingsURLString) else {
                 return
             }

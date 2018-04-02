@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		6631CD56C5E727FD8CCFFD36 /* Pods_mapsearchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E64B7A04541CC3DBA81187AF /* Pods_mapsearchUITests.framework */; };
+		890E10282071855100C903C3 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890E10272071855100C903C3 /* DataManager.swift */; };
+		890E102E2071A6C900C903C3 /* UIView+Animate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890E102D2071A6C900C903C3 /* UIView+Animate.swift */; };
+		890E10302071AFE200C903C3 /* LocationStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890E102F2071AFE200C903C3 /* LocationStorage.swift */; };
 		89762B3920710AAA001AE3E7 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89762B3820710AAA001AE3E7 /* Location.swift */; };
 		89762B3C20711198001AE3E7 /* UIViewController+PresentAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89762B3B20711198001AE3E7 /* UIViewController+PresentAlert.swift */; };
 		89762B7A20711C30001AE3E7 /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89762B7920711C30001AE3E7 /* UIView+Utils.swift */; };
@@ -25,6 +28,9 @@
 		89B05392207103AE002ADA48 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B0538D207103AD002ADA48 /* NetworkRouter.swift */; };
 		89B05393207103AE002ADA48 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B0538E207103AE002ADA48 /* Router.swift */; };
 		89B05394207103AE002ADA48 /* ParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B0538F207103AE002ADA48 /* ParameterEncoder.swift */; };
+		89DCCDD62071467F002EA345 /* SearchLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DCCDD52071467F002EA345 /* SearchLocationViewController.swift */; };
+		89DCCDDA20717D1A002EA345 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DCCDD920717D1A002EA345 /* LocationTableViewCell.swift */; };
+		89DCCDDC20718082002EA345 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DCCDDB20718082002EA345 /* LocationService.swift */; };
 		B377B151CD8825C09659EF30 /* Pods_mapsearchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C983B4FCC76EB449B669BA /* Pods_mapsearchTests.framework */; };
 		FB7B10BAC2C504A203F4DD5C /* Pods_mapsearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8264CA7B42ABCAFCB8D8ED24 /* Pods_mapsearch.framework */; };
 /* End PBXBuildFile section */
@@ -51,6 +57,9 @@
 		4137A82F435B99C7271246AC /* Pods-mapsearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mapsearch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mapsearch/Pods-mapsearch.debug.xcconfig"; sourceTree = "<group>"; };
 		420E00D6C3F01B4272271922 /* Pods-mapsearchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mapsearchTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mapsearchTests/Pods-mapsearchTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8264CA7B42ABCAFCB8D8ED24 /* Pods_mapsearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mapsearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		890E10272071855100C903C3 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		890E102D2071A6C900C903C3 /* UIView+Animate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Animate.swift"; sourceTree = "<group>"; };
+		890E102F2071AFE200C903C3 /* LocationStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationStorage.swift; sourceTree = "<group>"; };
 		89762B3820710AAA001AE3E7 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		89762B3B20711198001AE3E7 /* UIViewController+PresentAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+PresentAlert.swift"; sourceTree = "<group>"; };
 		89762B7920711C30001AE3E7 /* UIView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
@@ -74,6 +83,9 @@
 		89B0538D207103AD002ADA48 /* NetworkRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
 		89B0538E207103AE002ADA48 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		89B0538F207103AE002ADA48 /* ParameterEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParameterEncoder.swift; sourceTree = "<group>"; };
+		89DCCDD52071467F002EA345 /* SearchLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLocationViewController.swift; sourceTree = "<group>"; };
+		89DCCDD920717D1A002EA345 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
+		89DCCDDB20718082002EA345 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		99C983B4FCC76EB449B669BA /* Pods_mapsearchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mapsearchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B2F8F900B28413743817D06 /* Pods-mapsearchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mapsearchUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-mapsearchUITests/Pods-mapsearchUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D6ED715AC29D4FD3A41FC0B9 /* Pods-mapsearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mapsearch.release.xcconfig"; path = "Pods/Target Support Files/Pods-mapsearch/Pods-mapsearch.release.xcconfig"; sourceTree = "<group>"; };
@@ -128,6 +140,7 @@
 				8968F2582070511F00AF2AE0 /* Storage */,
 				89A39130207050E40095EEB4 /* Services */,
 				89762B3820710AAA001AE3E7 /* Location.swift */,
+				890E10272071855100C903C3 /* DataManager.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -135,6 +148,7 @@
 		8968F2582070511F00AF2AE0 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
+				890E102F2071AFE200C903C3 /* LocationStorage.swift */,
 			);
 			name = Storage;
 			sourceTree = "<group>";
@@ -142,6 +156,7 @@
 		89762B3A20711186001AE3E7 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				890E102D2071A6C900C903C3 /* UIView+Animate.swift */,
 				89762B7920711C30001AE3E7 /* UIView+Utils.swift */,
 				89762B3B20711198001AE3E7 /* UIViewController+PresentAlert.swift */,
 			);
@@ -160,6 +175,8 @@
 			isa = PBXGroup;
 			children = (
 				89A39100207048FF0095EEB4 /* MapViewController.swift */,
+				89DCCDD52071467F002EA345 /* SearchLocationViewController.swift */,
+				89DCCDD920717D1A002EA345 /* LocationTableViewCell.swift */,
 				89A39102207048FF0095EEB4 /* Main.storyboard */,
 			);
 			name = Scene;
@@ -241,6 +258,7 @@
 		89A39130207050E40095EEB4 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				89DCCDDB20718082002EA345 /* LocationService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -461,13 +479,17 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-mapsearch/Pods-mapsearch-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
 				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework",
 				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework.dSYM",
+				"${BUILT_PRODUCTS_DIR}/MapboxGeocoder.swift/MapboxGeocoder.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapbox.framework",
 				"${DWARF_DSYM_FOLDER_PATH}/Mapbox.framework.dSYM",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MapboxGeocoder.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -560,17 +582,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				89B05393207103AE002ADA48 /* Router.swift in Sources */,
+				890E10282071855100C903C3 /* DataManager.swift in Sources */,
 				89A39101207048FF0095EEB4 /* MapViewController.swift in Sources */,
 				89762B3920710AAA001AE3E7 /* Location.swift in Sources */,
+				890E102E2071A6C900C903C3 /* UIView+Animate.swift in Sources */,
 				89B05394207103AE002ADA48 /* ParameterEncoder.swift in Sources */,
 				89B05391207103AE002ADA48 /* EndPointType.swift in Sources */,
 				89B05390207103AE002ADA48 /* NetworkManager.swift in Sources */,
 				89A390FD207048FF0095EEB4 /* AppDelegate.swift in Sources */,
+				89DCCDDC20718082002EA345 /* LocationService.swift in Sources */,
 				89A3912F20704EF80095EEB4 /* R.swift in Sources */,
+				89DCCDDA20717D1A002EA345 /* LocationTableViewCell.swift in Sources */,
+				890E10302071AFE200C903C3 /* LocationStorage.swift in Sources */,
 				89B05392207103AE002ADA48 /* NetworkRouter.swift in Sources */,
 				89762B7A20711C30001AE3E7 /* UIView+Utils.swift in Sources */,
 				89762B3C20711198001AE3E7 /* UIViewController+PresentAlert.swift in Sources */,
 				89762B8120713B28001AE3E7 /* BlurredUIView.swift in Sources */,
+				89DCCDD62071467F002EA345 /* SearchLocationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
