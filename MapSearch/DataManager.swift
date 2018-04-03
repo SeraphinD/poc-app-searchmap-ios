@@ -29,4 +29,13 @@ final class DataManager {
             completion(location)
         }
     }
+    
+    func storeLocation(_ location: Location) {
+        LocationStorage().storeLocation(location)
+    }
+    
+    func getStoredLocations() -> [Location]? {
+        let locations = LocationStorage().getStoredLocations()
+        return locations
+    }
 }

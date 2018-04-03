@@ -52,7 +52,15 @@ final class MapViewController: UIViewController {
     
     fileprivate func showLocation() {
         locationDetailView.isHidden = false
+        storeLocation()
         updateLocationView()
+    }
+    
+    fileprivate func storeLocation() {
+        guard let location = location else {
+            return
+        }
+        DataManager().storeLocation(location)
     }
     
     fileprivate func askForLocationPermission() {
@@ -138,7 +146,6 @@ extension MapViewController: MGLMapViewDelegate {
     }
     
     func mapView(_ mapView: MGLMapView, regionDidChangeWith reason: MGLCameraChangeReason, animated: Bool) {
-        print(mapView.centerCoordinate)
         DataManager().getLocation(coordinate: (mapView.centerCoordinate.latitude, mapView.centerCoordinate.longitude)) { location in
             self.location = location
         }
