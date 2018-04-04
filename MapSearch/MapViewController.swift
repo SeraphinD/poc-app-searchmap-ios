@@ -96,7 +96,6 @@ final class MapViewController: UIViewController {
     
     fileprivate func zoomToLocation(coordinate: (latitude: Double?, longitude: Double?),
                                     zoom: Double? = nil) {
-        
         guard let latitude = coordinate.latitude, let longitude = coordinate.longitude else {
             return
         }
