@@ -7,22 +7,26 @@
 //
 
 import UIKit
-import Mapbox
+import CoreLocation
 
 final class MapViewController: UIViewController {
 
     // MARK: - IBOutlets
     
-    @IBOutlet fileprivate weak var mapView: MGLMapView!
+    @IBOutlet fileprivate weak var mapView: MapView!
     @IBOutlet fileprivate weak var locationDetailView: UIView!
     @IBOutlet fileprivate weak var nameLabel: UILabel!
     @IBOutlet fileprivate weak var streetLabel: UILabel!
     @IBOutlet fileprivate weak var cityLabel: UILabel!
-    
+    @IBOutlet fileprivate weak var mapViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet fileprivate weak var mapViewTopConstraint: NSLayoutConstraint!
+    @IBOutlet fileprivate weak var mapViewTrailingConstraint: NSLayoutConstraint!
+    @IBOutlet fileprivate weak var mapViewLeadingConstraint: NSLayoutConstraint!
     fileprivate let locationManager = CLLocationManager()
+    
     var location: Location? {
         didSet {
-            showLocation()
+            updateLocation()
         }
     }
     
@@ -31,6 +35,11 @@ final class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         showCurrentLocation()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        updateConstraintsToFitScreen()
     }
     
     // MARK: - IBActions
@@ -45,14 +54,36 @@ final class MapViewController: UIViewController {
     
     // MARK: - Fileprivate instance methods
     
+    fileprivate func updateConstraintsToFitScreen() {
+        let window = UIApplication.shared.keyWindow
+        let topPadding = UIApplication.shared.statusBarFrame.height
+        let bottomPadding = window?.safeAreaInsets.bottom ?? 0
+        let leftPadding = window?.safeAreaInsets.left ?? 0
+        let rightPadding = window?.safeAreaInsets.right ?? 0
+        UIView.animate(withDuration: 0.2) {
+            self.mapViewBottomConstraint.constant = -bottomPadding
+            self.mapViewTopConstraint.constant = topPadding
+            self.mapViewLeadingConstraint.constant = -leftPadding
+            self.mapViewTrailingConstraint.constant = -rightPadding
+        }
+    }
+    
     fileprivate func showCurrentLocation() {
         locationDetailView.isHidden = true
         askForLocationPermission()
     }
     
-    fileprivate func showLocation() {
+    fileprivate func updateLocation() {
         locationDetailView.isHidden = false
+        storeLocation()
         updateLocationView()
+    }
+    
+    fileprivate func storeLocation() {
+        guard let location = location else {
+            return
+        }
+        DataManager().storeLocation(location)
     }
     
     fileprivate func askForLocationPermission() {
@@ -73,7 +104,7 @@ final class MapViewController: UIViewController {
         
         mapView.setCenter(CLLocationCoordinate2D(latitude: latitude,
                                                  longitude: longitude),
-                          zoomLevel: zoom ?? mapView.zoomLevel, animated: true)
+                          zoomLevel: zoom)
     }
     
     fileprivate func updateLocationView() {
@@ -82,27 +113,8 @@ final class MapViewController: UIViewController {
             return
         }
         nameLabel.text = location.name
-        
-        switch (location.street, location.number) {
-        case (.some, .some):
-            streetLabel.text = "\(location.number ?? ""), \(location.street ?? "")"
-        case (.some, .none):
-            streetLabel.text = "\(location.street ?? "")"
-        default:
-            streetLabel.text = nil
-        }
-        
-        switch (location.postalCode, location.city) {
-        case (.some, .some):
-            cityLabel.text = "\(location.postalCode ?? ""), \(location.city ?? "")"
-        case (.some, .none):
-            cityLabel.text = "\(location.postalCode ?? "")"
-        case (.none, .some):
-            cityLabel.text = "\(location.city ?? "")"
-        default:
-            cityLabel.text = nil
-        }
-        
+        streetLabel.text = location.printableStreet
+        cityLabel.text = location.printableCity
         locationDetailView.isHidden = false
         locationDetailView.animateFromBottom(delay: 0.5)
     }
@@ -118,27 +130,13 @@ final class MapViewController: UIViewController {
 
 }
 
-extension MapViewController: MGLMapViewDelegate {
+extension MapViewController: MapViewDelegate {
     
-    func mapView(_ mapView: MGLMapView, imageFor annotation: MGLAnnotation) -> MGLAnnotationImage? {
-        var annotationImage = mapView.dequeueReusableAnnotationImage(withIdentifier: R.Images.mapMarker)
-        if annotationImage == nil {
-            var image = UIImage(named: R.Images.mapMarker)!
-            image = image.withAlignmentRectInsets(UIEdgeInsets(top: 0,
-                                                               left: 0,
-                                                               bottom: 0,
-                                                               right: 0))
-            annotationImage = MGLAnnotationImage(image: image, reuseIdentifier: R.Images.mapMarker)
-        }
-        return annotationImage
-    }
-    
-    func mapView(_ mapView: MGLMapView, regionWillChangeAnimated animated: Bool) {
+    func regionWillChange() {
         locationDetailView.hideFromTop()
     }
     
-    func mapView(_ mapView: MGLMapView, regionDidChangeWith reason: MGLCameraChangeReason, animated: Bool) {
-        print(mapView.centerCoordinate)
+    func regionDidChange(latitude: Double, longitude: Double) {
         DataManager().getLocation(coordinate: (mapView.centerCoordinate.latitude, mapView.centerCoordinate.longitude)) { location in
             self.location = location
         }
@@ -150,7 +148,7 @@ extension MapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
         DataManager().getLocation(coordinate: (locValue.latitude, locValue.longitude)) { location in
-            self.zoomToLocation(coordinate: (latitude: location?.latitude, longitude: location?.longitude), zoom: 13)
+            self.zoomToLocation(coordinate: (latitude: location?.latitude, longitude: location?.longitude))
             self.location = location
         }
         manager.stopUpdatingLocation()
@@ -164,7 +162,6 @@ extension MapViewController: CLLocationManagerDelegate {
 extension MapViewController: SearchLocationDelegate {
     
     func didSelectLocation(_ location: Location) {
-        self.location = location
         zoomToLocation(coordinate: (latitude: location.latitude, longitude: location.longitude))
     }
 }

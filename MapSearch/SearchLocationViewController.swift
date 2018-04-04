@@ -23,9 +23,7 @@ final class SearchLocationViewController: UIViewController {
     weak var delegate: SearchLocationDelegate?
     var locations = [Location]() {
         didSet {
-            locationsTableView.reloadData()
-            showEmptyViewIfNeeded()
-            locationsTableView.animateFromBottom()
+            refreshLocations()
         }
     }
     
@@ -34,6 +32,7 @@ final class SearchLocationViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         configureSearchBar()
+        getStoredLocations()
     }
     
     // MARK: - IBActions
@@ -48,11 +47,24 @@ final class SearchLocationViewController: UIViewController {
     
     // MARK: - Fileprivate instance methods
     
+    fileprivate func refreshLocations() {
+        locationsTableView.reloadData()
+        showEmptyViewIfNeeded()
+        locationsTableView.animateFromBottom()
+    }
+
+    fileprivate func getStoredLocations() {
+        guard let storedLocations = DataManager().getStoredLocations() else {
+            return
+        }
+        locations = storedLocations
+    }
+    
     fileprivate func showEmptyViewIfNeeded() {
         let emptySearchBar = (searchBar.text ?? "").isEmpty
         let emptyTableView = locations.count == 0
-        emptyView.isHidden = emptySearchBar || !emptyTableView
-        locationsTableView.isHidden = emptySearchBar || emptyTableView
+        emptyView.isHidden = !emptyTableView || emptySearchBar
+        locationsTableView.isHidden = emptyTableView
         emptyView.animateFromBottom()
     }
     
@@ -67,8 +79,12 @@ final class SearchLocationViewController: UIViewController {
         searchBar.becomeFirstResponder()
     }
     
-    @objc fileprivate func reload() {
-        DataManager().searchLocations(query: searchBar.text ?? "") { locations in
+    @objc fileprivate func searchLocation() {
+        guard let searchBarText = searchBar.text, !searchBarText.isEmpty else {
+            getStoredLocations()
+            return
+        }
+        DataManager().searchLocations(query: searchBarText) { locations in
             self.locations = locations ?? []
         }
     }
@@ -78,9 +94,9 @@ extension SearchLocationViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         NSObject.cancelPreviousPerformRequests(withTarget: self,
-                                               selector: #selector(reload),
+                                               selector: #selector(searchLocation),
                                                object: nil)
-        perform(#selector(reload), with: nil, afterDelay: 1)
+        perform(#selector(searchLocation), with: nil, afterDelay: 1)
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
