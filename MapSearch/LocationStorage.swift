@@ -10,6 +10,8 @@ import Foundation
 
 final class LocationStorage {
     
+    private let locationsStorageLimit = 2
+    
     private struct StorageKey {
         static let locations = "locations"
     }
@@ -18,13 +20,16 @@ final class LocationStorage {
     
     func storeLocation(_ location: Location) {
         var locations = getStoredLocations() ?? []
-        if locations.count > 2 { locations.removeFirst() }
-        locations.append(location)
+        locations = locations.filter { $0 != location }
+        if locations.count >= locationsStorageLimit { locations.removeLast() }
+        locations.insert(location, at: 0)
         userDefaults.set(locations.map { $0.encode() }, forKey: StorageKey.locations)
     }
     
     func getStoredLocations() -> [Location]? {
         guard let locationsData = userDefaults.object(forKey: StorageKey.locations) as? [Data] else { return nil }
-        return locationsData.compactMap { return Location(data: $0) }
+        var locations = locationsData.compactMap { return Location(data: $0) }
+        for i in 0..<locations.count { locations[i].stored = true }
+        return locations
     }
 }

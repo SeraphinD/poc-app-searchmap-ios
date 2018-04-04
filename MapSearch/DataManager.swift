@@ -35,7 +35,6 @@ final class DataManager {
     }
     
     func getStoredLocations() -> [Location]? {
-        let locations = LocationStorage().getStoredLocations()
-        return locations
+        return LocationStorage().getStoredLocations()
     }
 }

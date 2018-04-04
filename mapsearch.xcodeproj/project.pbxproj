@@ -23,11 +23,7 @@
 		89A39114207049000095EEB4 /* mapsearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A39113207049000095EEB4 /* mapsearchTests.swift */; };
 		89A3911F207049000095EEB4 /* mapsearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A3911E207049000095EEB4 /* mapsearchUITests.swift */; };
 		89A3912F20704EF80095EEB4 /* R.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A3912E20704EF80095EEB4 /* R.swift */; };
-		89B05390207103AE002ADA48 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B0538B207103AD002ADA48 /* NetworkManager.swift */; };
-		89B05391207103AE002ADA48 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B0538C207103AD002ADA48 /* EndPointType.swift */; };
-		89B05392207103AE002ADA48 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B0538D207103AD002ADA48 /* NetworkRouter.swift */; };
-		89B05393207103AE002ADA48 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B0538E207103AE002ADA48 /* Router.swift */; };
-		89B05394207103AE002ADA48 /* ParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B0538F207103AE002ADA48 /* ParameterEncoder.swift */; };
+		89C18E0820756A4900A5A58B /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C18E0720756A4900A5A58B /* MapView.swift */; };
 		89DCCDD62071467F002EA345 /* SearchLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DCCDD52071467F002EA345 /* SearchLocationViewController.swift */; };
 		89DCCDDA20717D1A002EA345 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DCCDD920717D1A002EA345 /* LocationTableViewCell.swift */; };
 		89DCCDDC20718082002EA345 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DCCDDB20718082002EA345 /* LocationService.swift */; };
@@ -78,11 +74,7 @@
 		89A3911E207049000095EEB4 /* mapsearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapsearchUITests.swift; sourceTree = "<group>"; };
 		89A39120207049000095EEB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89A3912E20704EF80095EEB4 /* R.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.swift; sourceTree = "<group>"; };
-		89B0538B207103AD002ADA48 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		89B0538C207103AD002ADA48 /* EndPointType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
-		89B0538D207103AD002ADA48 /* NetworkRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
-		89B0538E207103AE002ADA48 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		89B0538F207103AE002ADA48 /* ParameterEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParameterEncoder.swift; sourceTree = "<group>"; };
+		89C18E0720756A4900A5A58B /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		89DCCDD52071467F002EA345 /* SearchLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLocationViewController.swift; sourceTree = "<group>"; };
 		89DCCDD920717D1A002EA345 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
 		89DCCDDB20718082002EA345 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
@@ -167,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				89762B8020713B28001AE3E7 /* BlurredUIView.swift */,
+				89C18E0720756A4900A5A58B /* MapView.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -209,7 +202,6 @@
 			children = (
 				89762B7F20713B1A001AE3E7 /* Components */,
 				89762B3A20711186001AE3E7 /* Utils */,
-				89B0538A2071038A002ADA48 /* Networking */,
 				899ACC482070513F00CAF7AC /* Scene */,
 				8968F2572070511200AF2AE0 /* Model */,
 				89A3912D20704EE30095EEB4 /* Resources */,
@@ -261,18 +253,6 @@
 				89DCCDDB20718082002EA345 /* LocationService.swift */,
 			);
 			name = Services;
-			sourceTree = "<group>";
-		};
-		89B0538A2071038A002ADA48 /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-				89B0538C207103AD002ADA48 /* EndPointType.swift */,
-				89B0538B207103AD002ADA48 /* NetworkManager.swift */,
-				89B0538D207103AD002ADA48 /* NetworkRouter.swift */,
-				89B0538F207103AE002ADA48 /* ParameterEncoder.swift */,
-				89B0538E207103AE002ADA48 /* Router.swift */,
-			);
-			name = Networking;
 			sourceTree = "<group>";
 		};
 		94F18A9D79D12B401FDA000F /* Frameworks */ = {
@@ -581,20 +561,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89B05393207103AE002ADA48 /* Router.swift in Sources */,
 				890E10282071855100C903C3 /* DataManager.swift in Sources */,
 				89A39101207048FF0095EEB4 /* MapViewController.swift in Sources */,
 				89762B3920710AAA001AE3E7 /* Location.swift in Sources */,
 				890E102E2071A6C900C903C3 /* UIView+Animate.swift in Sources */,
-				89B05394207103AE002ADA48 /* ParameterEncoder.swift in Sources */,
-				89B05391207103AE002ADA48 /* EndPointType.swift in Sources */,
-				89B05390207103AE002ADA48 /* NetworkManager.swift in Sources */,
 				89A390FD207048FF0095EEB4 /* AppDelegate.swift in Sources */,
 				89DCCDDC20718082002EA345 /* LocationService.swift in Sources */,
 				89A3912F20704EF80095EEB4 /* R.swift in Sources */,
+				89C18E0820756A4900A5A58B /* MapView.swift in Sources */,
 				89DCCDDA20717D1A002EA345 /* LocationTableViewCell.swift in Sources */,
 				890E10302071AFE200C903C3 /* LocationStorage.swift in Sources */,
-				89B05392207103AE002ADA48 /* NetworkRouter.swift in Sources */,
 				89762B7A20711C30001AE3E7 /* UIView+Utils.swift in Sources */,
 				89762B3C20711198001AE3E7 /* UIViewController+PresentAlert.swift in Sources */,
 				89762B8120713B28001AE3E7 /* BlurredUIView.swift in Sources */,

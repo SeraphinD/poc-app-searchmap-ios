@@ -17,6 +17,32 @@ struct Location {
     let street: String?
     let postalCode: String?
     let city: String?
+    
+    var stored = false
+    
+    var printableStreet: String? {
+        switch (street, number) {
+        case (.some, .some):
+            return "\(number!), \(street!)"
+        case (.some, .none):
+            return "\(street!)"
+        default:
+            return nil
+        }
+    }
+    
+    var printableCity: String? {
+        switch (postalCode, city) {
+        case (.some, .some):
+            return "\(postalCode!), \(city!)"
+        case (.some, .none):
+            return "\(postalCode!)"
+        case (.none, .some):
+            return "\(city!)"
+        default:
+            return nil
+        }
+    }
 }
 
 extension Location {
@@ -35,7 +61,7 @@ extension Location {
         name = geocodedPlacemark.name
         latitude = geocodedPlacemark.location?.coordinate.latitude
         longitude = geocodedPlacemark.location?.coordinate.longitude
-        number = geocodedPlacemark.addressDictionary?["subThoroughfare"] as? String
+        number = geocodedPlacemark.addressDictionary?["subThoroughfare"] as? String // Do not exist as MPPostalAddressXXX ?
         city = geocodedPlacemark.addressDictionary?[MBPostalAddressCityKey] as? String
         street = geocodedPlacemark.addressDictionary?[MBPostalAddressStreetKey] as? String
         postalCode = geocodedPlacemark.addressDictionary?[MBPostalAddressPostalCodeKey] as? String
@@ -74,5 +100,16 @@ extension Location {
         self.number = number
         self.city = city
         self.postalCode = postalCode
+    }
+}
+
+extension Location: Equatable {
+    static func == (lhs: Location, rhs: Location) -> Bool {
+        return
+            lhs.name == rhs.name &&
+                lhs.city == rhs.city &&
+                lhs.street == rhs.street &&
+                lhs.postalCode == rhs.postalCode &&
+                lhs.number == rhs.number
     }
 }
