@@ -74,9 +74,8 @@ final class MapViewController: UIViewController {
     }
     
     fileprivate func updateLocation() {
-        locationDetailView.isHidden = false
         storeLocation()
-        updateLocationView()
+        updateLocationDetailView()
     }
     
     fileprivate func storeLocation() {
@@ -107,7 +106,7 @@ final class MapViewController: UIViewController {
                           zoomLevel: zoom)
     }
     
-    fileprivate func updateLocationView() {
+    fileprivate func updateLocationDetailView() {
         guard let location = location else {
             locationDetailView.isHidden = true
             return
@@ -149,7 +148,6 @@ extension MapViewController: CLLocationManagerDelegate {
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
         DataManager().getLocation(coordinate: (locValue.latitude, locValue.longitude)) { location in
             self.zoomToLocation(coordinate: (latitude: location?.latitude, longitude: location?.longitude))
-            self.location = location
         }
         manager.stopUpdatingLocation()
     }
