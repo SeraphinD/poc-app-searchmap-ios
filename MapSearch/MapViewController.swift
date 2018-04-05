@@ -56,16 +56,10 @@ final class MapViewController: UIViewController {
     
     fileprivate func updateConstraintsToFitScreen() {
         let window = UIApplication.shared.keyWindow
-        let topPadding = UIApplication.shared.statusBarFrame.height
-        let bottomPadding = window?.safeAreaInsets.bottom ?? 0
-        let leftPadding = window?.safeAreaInsets.left ?? 0
-        let rightPadding = window?.safeAreaInsets.right ?? 0
-        UIView.animate(withDuration: 0.2) {
-            self.mapViewBottomConstraint.constant = -bottomPadding
-            self.mapViewTopConstraint.constant = topPadding
-            self.mapViewLeadingConstraint.constant = -leftPadding
-            self.mapViewTrailingConstraint.constant = -rightPadding
-        }
+        mapViewBottomConstraint.constant = -(window?.safeAreaInsets.bottom ?? 0)
+        mapViewTopConstraint.constant = UIApplication.shared.statusBarFrame.height
+        mapViewLeadingConstraint.constant = -(window?.safeAreaInsets.left ?? 0)
+        mapViewTrailingConstraint.constant = -(window?.safeAreaInsets.right ?? 0)
     }
     
     fileprivate func showCurrentLocation() {
