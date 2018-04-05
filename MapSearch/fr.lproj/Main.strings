@@ -1,0 +1,11 @@
+/* Class = "UIViewController"; title = "Map"; ObjectID = "JEX-9P-axG"; */
+"JEX-9P-axG.title" = "Map";
+
+/* Class = "UISearchBar"; placeholder = "Search for locations"; ObjectID = "f9k-Zt-x82"; */
+"f9k-Zt-x82.placeholder" = "Rechercher un endroit";
+
+/* Class = "UINavigationItem"; title = "Map"; ObjectID = "mOI-FS-AaM"; */
+"mOI-FS-AaM.title" = "Map";
+
+/* Class = "UILabel"; text = "Oops, nothing here. Maybe I should try another query 🤨!"; ObjectID = "ncU-6O-H59"; */
+"ncU-6O-H59.text" = "Oups, il n'y a rien ici. Je devrais peut être réessayer 🤨!";

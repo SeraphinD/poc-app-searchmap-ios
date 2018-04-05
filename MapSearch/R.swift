@@ -17,10 +17,10 @@ struct R {
     }
     
     struct String {
-        static let ok = "OK"
-        static let settings = "Settings"
-        static let locationFailed = "Unable to get your location, please update your settings in order to MapSearch to work"
-        static let searchLocationPlaceholder = "Search locations"
+        static let ok = "ok".localized
+        static let settings = "settings".localized
+        static let locationFailed = "location-failed".localized
+        static let searchLocationPlaceholder = "location-search".localized
     }
     
     struct Images {

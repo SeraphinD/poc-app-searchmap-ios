@@ -27,6 +27,8 @@
 		89DCCDD62071467F002EA345 /* SearchLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DCCDD52071467F002EA345 /* SearchLocationViewController.swift */; };
 		89DCCDDA20717D1A002EA345 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DCCDD920717D1A002EA345 /* LocationTableViewCell.swift */; };
 		89DCCDDC20718082002EA345 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DCCDDB20718082002EA345 /* LocationService.swift */; };
+		89E9303A20763EDC00DAE3B7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 89E9303C20763EDC00DAE3B7 /* Localizable.strings */; };
+		89E9303F20763EF800DAE3B7 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E9303E20763EF800DAE3B7 /* String+Localized.swift */; };
 		B377B151CD8825C09659EF30 /* Pods_mapsearchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C983B4FCC76EB449B669BA /* Pods_mapsearchTests.framework */; };
 		FB7B10BAC2C504A203F4DD5C /* Pods_mapsearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8264CA7B42ABCAFCB8D8ED24 /* Pods_mapsearch.framework */; };
 /* End PBXBuildFile section */
@@ -78,6 +80,11 @@
 		89DCCDD52071467F002EA345 /* SearchLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLocationViewController.swift; sourceTree = "<group>"; };
 		89DCCDD920717D1A002EA345 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
 		89DCCDDB20718082002EA345 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		89E9303820763ED500DAE3B7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		89E9303920763ED600DAE3B7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		89E9303B20763EDC00DAE3B7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		89E9303D20763EDF00DAE3B7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		89E9303E20763EF800DAE3B7 /* String+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
 		99C983B4FCC76EB449B669BA /* Pods_mapsearchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mapsearchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B2F8F900B28413743817D06 /* Pods-mapsearchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mapsearchUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-mapsearchUITests/Pods-mapsearchUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D6ED715AC29D4FD3A41FC0B9 /* Pods-mapsearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mapsearch.release.xcconfig"; path = "Pods/Target Support Files/Pods-mapsearch/Pods-mapsearch.release.xcconfig"; sourceTree = "<group>"; };
@@ -148,6 +155,7 @@
 		89762B3A20711186001AE3E7 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				89E9303E20763EF800DAE3B7 /* String+Localized.swift */,
 				890E102D2071A6C900C903C3 /* UIView+Animate.swift */,
 				89762B7920711C30001AE3E7 /* UIView+Utils.swift */,
 				89762B3B20711198001AE3E7 /* UIViewController+PresentAlert.swift */,
@@ -243,6 +251,7 @@
 			children = (
 				89A39105207049000095EEB4 /* Assets.xcassets */,
 				89A3912E20704EF80095EEB4 /* R.swift */,
+				89E9303C20763EDC00DAE3B7 /* Localizable.strings */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -360,6 +369,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = 89A390F0207048FF0095EEB4;
 			productRefGroup = 89A390FA207048FF0095EEB4 /* Products */;
@@ -379,6 +389,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89A39109207049000095EEB4 /* LaunchScreen.storyboard in Resources */,
+				89E9303A20763EDC00DAE3B7 /* Localizable.strings in Resources */,
 				89A39106207049000095EEB4 /* Assets.xcassets in Resources */,
 				89A39104207048FF0095EEB4 /* Main.storyboard in Resources */,
 			);
@@ -570,6 +581,7 @@
 				89A3912F20704EF80095EEB4 /* R.swift in Sources */,
 				89C18E0820756A4900A5A58B /* MapView.swift in Sources */,
 				89DCCDDA20717D1A002EA345 /* LocationTableViewCell.swift in Sources */,
+				89E9303F20763EF800DAE3B7 /* String+Localized.swift in Sources */,
 				890E10302071AFE200C903C3 /* LocationStorage.swift in Sources */,
 				89762B7A20711C30001AE3E7 /* UIView+Utils.swift in Sources */,
 				89762B3C20711198001AE3E7 /* UIViewController+PresentAlert.swift in Sources */,
@@ -614,6 +626,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				89A39103207048FF0095EEB4 /* Base */,
+				89E9303820763ED500DAE3B7 /* fr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -622,8 +635,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				89A39108207049000095EEB4 /* Base */,
+				89E9303920763ED600DAE3B7 /* fr */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		89E9303C20763EDC00DAE3B7 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				89E9303B20763EDC00DAE3B7 /* en */,
+				89E9303D20763EDF00DAE3B7 /* fr */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -633,6 +656,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -693,6 +717,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

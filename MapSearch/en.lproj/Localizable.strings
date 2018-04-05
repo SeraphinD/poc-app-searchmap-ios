@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  mapsearch
+
+  Created by Seraphin DESUMEUR on 05/04/2018.
+  Copyright © 2018 Seraphin DESUMEUR. All rights reserved.
+*/
+
+"ok" = "OK";
+"settings" = "Settings";
+"location-failed" = "Unable to get your location, please update your settings in order to MapSearch to work";
+"location-search" = "Search locations";
