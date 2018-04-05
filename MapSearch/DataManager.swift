@@ -10,6 +10,14 @@ import Foundation
 
 final class DataManager {
     
+    private let locationService: LocationService
+    private let locationStorage: LocationStorage
+    
+    init() {
+        locationService = LocationService()
+        locationStorage = LocationStorage()
+    }
+    
     func searchLocations(query: String, completion:@escaping ([Location]?) -> Void) {
         
         guard !query.isEmpty else {
@@ -17,7 +25,7 @@ final class DataManager {
             return
         }
         
-        LocationService().searchLocations(query) { locations in
+        locationService.searchLocations(query) { locations in
             completion(locations)
         }
     }
@@ -25,16 +33,16 @@ final class DataManager {
     func getLocation(coordinate: (latitude: Double, longitude: Double),
                      completion: @escaping (Location?) -> Void) {
         
-        LocationService().getLocation(coordinate: coordinate) { location in
+        locationService.getLocation(coordinate: coordinate) { location in
             completion(location)
         }
     }
     
     func storeLocation(_ location: Location) {
-        LocationStorage().storeLocation(location)
+        locationStorage.storeLocation(location)
     }
     
     func getStoredLocations() -> [Location]? {
-        return LocationStorage().getStoredLocations()
+        return locationStorage.getStoredLocations()
     }
 }

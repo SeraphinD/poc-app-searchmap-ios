@@ -54,7 +54,7 @@ final class SearchLocationViewController: UIViewController {
     }
 
     fileprivate func getStoredLocations() {
-        guard let storedLocations = DataManager().getStoredLocations() else {
+        guard let storedLocations = dataManager.getStoredLocations() else {
             return
         }
         locations = storedLocations
@@ -84,7 +84,7 @@ final class SearchLocationViewController: UIViewController {
             getStoredLocations()
             return
         }
-        DataManager().searchLocations(query: searchBarText) { locations in
+        dataManager.searchLocations(query: searchBarText) { locations in
             self.locations = locations ?? []
         }
     }

@@ -76,7 +76,7 @@ final class MapViewController: UIViewController {
         guard let location = location else {
             return
         }
-        DataManager().storeLocation(location)
+        dataManager.storeLocation(location)
     }
     
     fileprivate func askForLocationPermission() {
@@ -129,7 +129,7 @@ extension MapViewController: MapViewDelegate {
     }
     
     func regionDidChange(latitude: Double, longitude: Double) {
-        DataManager().getLocation(coordinate: (mapView.centerCoordinate.latitude, mapView.centerCoordinate.longitude)) { location in
+        dataManager.getLocation(coordinate: (mapView.centerCoordinate.latitude, mapView.centerCoordinate.longitude)) { location in
             self.location = location
         }
     }
@@ -139,7 +139,7 @@ extension MapViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
-        DataManager().getLocation(coordinate: (locValue.latitude, locValue.longitude)) { location in
+        dataManager.getLocation(coordinate: (locValue.latitude, locValue.longitude)) { location in
             self.zoomToLocation(coordinate: (latitude: location?.latitude, longitude: location?.longitude))
         }
         manager.stopUpdatingLocation()
