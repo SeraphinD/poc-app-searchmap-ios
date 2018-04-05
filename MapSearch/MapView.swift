@@ -53,6 +53,7 @@ final class MapView: UIView {
 }
 
 extension MapView: MGLMapViewDelegate {
+    
     func mapView(_ mapView: MGLMapView, regionWillChangeAnimated animated: Bool) {
         delegate?.regionWillChange()
     }

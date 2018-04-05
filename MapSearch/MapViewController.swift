@@ -56,16 +56,10 @@ final class MapViewController: UIViewController {
     
     fileprivate func updateConstraintsToFitScreen() {
         let window = UIApplication.shared.keyWindow
-        let topPadding = UIApplication.shared.statusBarFrame.height
-        let bottomPadding = window?.safeAreaInsets.bottom ?? 0
-        let leftPadding = window?.safeAreaInsets.left ?? 0
-        let rightPadding = window?.safeAreaInsets.right ?? 0
-        UIView.animate(withDuration: 0.2) {
-            self.mapViewBottomConstraint.constant = -bottomPadding
-            self.mapViewTopConstraint.constant = topPadding
-            self.mapViewLeadingConstraint.constant = -leftPadding
-            self.mapViewTrailingConstraint.constant = -rightPadding
-        }
+        mapViewBottomConstraint.constant = -(window?.safeAreaInsets.bottom ?? 0)
+        mapViewTopConstraint.constant = UIApplication.shared.statusBarFrame.height
+        mapViewLeadingConstraint.constant = -(window?.safeAreaInsets.left ?? 0)
+        mapViewTrailingConstraint.constant = -(window?.safeAreaInsets.right ?? 0)
     }
     
     fileprivate func showCurrentLocation() {
@@ -74,9 +68,8 @@ final class MapViewController: UIViewController {
     }
     
     fileprivate func updateLocation() {
-        locationDetailView.isHidden = false
         storeLocation()
-        updateLocationView()
+        updateLocationDetailView()
     }
     
     fileprivate func storeLocation() {
@@ -97,7 +90,6 @@ final class MapViewController: UIViewController {
     
     fileprivate func zoomToLocation(coordinate: (latitude: Double?, longitude: Double?),
                                     zoom: Double? = nil) {
-        
         guard let latitude = coordinate.latitude, let longitude = coordinate.longitude else {
             return
         }
@@ -107,7 +99,7 @@ final class MapViewController: UIViewController {
                           zoomLevel: zoom)
     }
     
-    fileprivate func updateLocationView() {
+    fileprivate func updateLocationDetailView() {
         guard let location = location else {
             locationDetailView.isHidden = true
             return
@@ -149,7 +141,6 @@ extension MapViewController: CLLocationManagerDelegate {
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
         DataManager().getLocation(coordinate: (locValue.latitude, locValue.longitude)) { location in
             self.zoomToLocation(coordinate: (latitude: location?.latitude, longitude: location?.longitude))
-            self.location = location
         }
         manager.stopUpdatingLocation()
     }
