@@ -54,7 +54,7 @@ final class SearchLocationViewController: UIViewController {
     }
 
     fileprivate func getStoredLocations() {
-        guard let storedLocations = DataManager().getStoredLocations() else {
+        guard let storedLocations = DataManager.shared.getStoredLocations() else {
             return
         }
         locations = storedLocations
@@ -70,6 +70,7 @@ final class SearchLocationViewController: UIViewController {
     
     fileprivate func endEditing() {
         view.endEditing(true)
+        // A little bit hackish way of always enable UISearchBar's cancel button.
         let cancelButton = searchBar.value(forKey: "cancelButton") as? UIButton
         cancelButton?.isEnabled = true
     }
@@ -84,7 +85,7 @@ final class SearchLocationViewController: UIViewController {
             getStoredLocations()
             return
         }
-        DataManager().searchLocations(query: searchBarText) { locations in
+        DataManager.shared.searchLocations(query: searchBarText) { locations in
             self.locations = locations ?? []
         }
     }
@@ -93,6 +94,7 @@ final class SearchLocationViewController: UIViewController {
 extension SearchLocationViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        // Handle fast typing
         NSObject.cancelPreviousPerformRequests(withTarget: self,
                                                selector: #selector(searchLocation),
                                                object: nil)
@@ -115,7 +117,10 @@ extension SearchLocationViewController: UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: R.Cell.location, for: indexPath) as! LocationTableViewCell
+        let cell = tableView
+            .dequeueReusableCell(withIdentifier: R.Cell.location,
+                                 for: indexPath)
+            as! LocationTableViewCell
         cell.location = locations[indexPath.row]
         return cell
     }

@@ -15,9 +15,4 @@ target 'mapsearch' do
     # Pods for testing
   end
 
-  target 'mapsearchUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
 end

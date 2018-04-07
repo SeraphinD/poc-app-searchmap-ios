@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 
 final class MapViewController: UIViewController {
-
+    
     // MARK: - IBOutlets
     
     @IBOutlet fileprivate weak var mapView: MapView!
@@ -23,6 +23,7 @@ final class MapViewController: UIViewController {
     @IBOutlet fileprivate weak var mapViewTrailingConstraint: NSLayoutConstraint!
     @IBOutlet fileprivate weak var mapViewLeadingConstraint: NSLayoutConstraint!
     fileprivate let locationManager = CLLocationManager()
+    fileprivate var locInitialized = false
     
     var location: Location? {
         didSet {
@@ -34,7 +35,7 @@ final class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        showCurrentLocation()
+        askForCurrentLocation()
     }
     
     override func viewDidLayoutSubviews() {
@@ -44,27 +45,24 @@ final class MapViewController: UIViewController {
     
     // MARK: - IBActions
     
-    @IBAction fileprivate func didTouchUpInsideSearchButton(_ sender: UIButton) {
+    @IBAction private func didTouchUpInsideSearchButton(_ sender: UIButton) {
         performSegue(withIdentifier: R.Segue.showSearchBar, sender: self)
     }
     
-    @IBAction fileprivate func didTouchUpInsideCurrentButton(_ sender: UIButton) {
-        showCurrentLocation()
+    @IBAction private func didTouchUpInsideCurrentButton(_ sender: UIButton) {
+        askForCurrentLocation()
     }
     
     // MARK: - Fileprivate instance methods
     
     fileprivate func updateConstraintsToFitScreen() {
         let window = UIApplication.shared.keyWindow
-        mapViewBottomConstraint.constant = -(window?.safeAreaInsets.bottom ?? 0)
+        if #available(iOS 11.0, *) {
+            mapViewBottomConstraint.constant = -(window?.safeAreaInsets.bottom ?? 0)
+            mapViewLeadingConstraint.constant = -(window?.safeAreaInsets.left ?? 0)
+            mapViewTrailingConstraint.constant = -(window?.safeAreaInsets.right ?? 0)
+        }
         mapViewTopConstraint.constant = UIApplication.shared.statusBarFrame.height
-        mapViewLeadingConstraint.constant = -(window?.safeAreaInsets.left ?? 0)
-        mapViewTrailingConstraint.constant = -(window?.safeAreaInsets.right ?? 0)
-    }
-    
-    fileprivate func showCurrentLocation() {
-        locationDetailView.isHidden = true
-        askForLocationPermission()
     }
     
     fileprivate func updateLocation() {
@@ -76,10 +74,10 @@ final class MapViewController: UIViewController {
         guard let location = location else {
             return
         }
-        DataManager().storeLocation(location)
+        DataManager.shared.storeLocation(location)
     }
     
-    fileprivate func askForLocationPermission() {
+    fileprivate func askForCurrentLocation() {
         locationManager.requestWhenInUseAuthorization()
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
@@ -119,7 +117,7 @@ final class MapViewController: UIViewController {
             vc.delegate = self
         }
     }
-
+    
 }
 
 extension MapViewController: MapViewDelegate {
@@ -129,8 +127,13 @@ extension MapViewController: MapViewDelegate {
     }
     
     func regionDidChange(latitude: Double, longitude: Double) {
-        DataManager().getLocation(coordinate: (mapView.centerCoordinate.latitude, mapView.centerCoordinate.longitude)) { location in
-            self.location = location
+         // Get location only if location has been authorized to avoid storing default map location.
+        guard locInitialized else {
+            return
+        }
+        DataManager.shared.getLocation(coordinate: (mapView.centerCoordinate.latitude,
+                                                    mapView.centerCoordinate.longitude)) { location in
+                                                        self.location = location
         }
     }
 }
@@ -139,10 +142,13 @@ extension MapViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
-        DataManager().getLocation(coordinate: (locValue.latitude, locValue.longitude)) { location in
-            self.zoomToLocation(coordinate: (latitude: location?.latitude, longitude: location?.longitude))
+        locationManager.stopUpdatingLocation()
+        DataManager.shared.getLocation(coordinate: (locValue.latitude,
+                                                    locValue.longitude)) { location in
+                                                        self.zoomToLocation(coordinate: (latitude: location?.latitude,
+                                                                                         longitude: location?.longitude))
+                                                        self.locInitialized = true
         }
-        manager.stopUpdatingLocation()
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
