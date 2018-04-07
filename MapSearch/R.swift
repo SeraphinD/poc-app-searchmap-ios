@@ -22,5 +22,4 @@ struct R {
         static let locationFailed = "location-failed".localized
         static let searchLocationPlaceholder = "location-search".localized
     }
-    
 }

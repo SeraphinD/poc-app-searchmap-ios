@@ -117,10 +117,12 @@ extension SearchLocationViewController: UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView
+        guard let cell = tableView
             .dequeueReusableCell(withIdentifier: R.Cell.location,
                                  for: indexPath)
-            as! LocationTableViewCell
+            as? LocationTableViewCell else {
+                return UITableViewCell()
+        }
         cell.location = locations[indexPath.row]
         return cell
     }

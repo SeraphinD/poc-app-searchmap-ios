@@ -162,4 +162,3 @@ extension MapViewController: SearchLocationDelegate {
         zoomToLocation(coordinate: (latitude: location.latitude, longitude: location.longitude))
     }
 }
-

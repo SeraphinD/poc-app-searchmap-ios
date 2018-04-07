@@ -80,7 +80,7 @@ extension Location {
         archiver.finishEncoding()
         return data as Data
     }
-        
+    
     init?(data: Data) {
         let unarchiver = NSKeyedUnarchiver(forReadingWith: data)
         defer {

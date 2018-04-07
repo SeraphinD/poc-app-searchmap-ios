@@ -29,7 +29,7 @@ final class BlurredUIView: UIView {
     }
     
     private func removeBlurEffectIfNeeded() {
-        let blurredEffectViews = subviews.filter {$0 is UIVisualEffectView}
+        let blurredEffectViews = subviews.filter { $0 is UIVisualEffectView }
         blurredEffectViews.forEach { $0.removeFromSuperview() }
     }
 }
