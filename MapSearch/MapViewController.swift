@@ -57,10 +57,12 @@ final class MapViewController: UIViewController {
     
     fileprivate func updateConstraintsToFitScreen() {
         let window = UIApplication.shared.keyWindow
-        mapViewBottomConstraint.constant = -(window?.safeAreaInsets.bottom ?? 0)
+        if #available(iOS 11.0, *) {
+            mapViewBottomConstraint.constant = -(window?.safeAreaInsets.bottom ?? 0)
+            mapViewLeadingConstraint.constant = -(window?.safeAreaInsets.left ?? 0)
+            mapViewTrailingConstraint.constant = -(window?.safeAreaInsets.right ?? 0)
+        }
         mapViewTopConstraint.constant = UIApplication.shared.statusBarFrame.height
-        mapViewLeadingConstraint.constant = -(window?.safeAreaInsets.left ?? 0)
-        mapViewTrailingConstraint.constant = -(window?.safeAreaInsets.right ?? 0)
     }
     
     fileprivate func updateLocation() {
