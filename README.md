@@ -11,7 +11,7 @@
 
 ### 🗺 Introduction 
 
-SearchMap is a proof of concept using the SDK MapBox (https://www.mapbox.com/ios-sdk/).
+SearchMap is a iOS app developed as a proof of concept using the SDK MapBox (https://www.mapbox.com/ios-sdk/).
 It allows user to get its position on a map view and to search for more locations.
 
 ### 🤔 Why
