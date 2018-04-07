@@ -10,10 +10,10 @@ import UIKit
 
 class LocationTableViewCell: UITableViewCell {
     
-    @IBOutlet private weak var nameLabel: UILabel!
-    @IBOutlet private weak var streetLabel: UILabel!
-    @IBOutlet private weak var cityLabel: UILabel!
-    @IBOutlet private weak var historyImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var streetLabel: UILabel!
+    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var historyImageView: UIImageView!
 
     var location: Location! {
         didSet {

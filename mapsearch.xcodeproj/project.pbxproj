@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6631CD56C5E727FD8CCFFD36 /* Pods_mapsearchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E64B7A04541CC3DBA81187AF /* Pods_mapsearchUITests.framework */; };
 		890E10282071855100C903C3 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890E10272071855100C903C3 /* DataManager.swift */; };
 		890E102E2071A6C900C903C3 /* UIView+Animate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890E102D2071A6C900C903C3 /* UIView+Animate.swift */; };
 		890E10302071AFE200C903C3 /* LocationStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890E102F2071AFE200C903C3 /* LocationStorage.swift */; };
+		897197412078E9DF00ACEAAB /* LocationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897197402078E9DF00ACEAAB /* LocationsTests.swift */; };
 		89762B3920710AAA001AE3E7 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89762B3820710AAA001AE3E7 /* Location.swift */; };
 		89762B3C20711198001AE3E7 /* UIViewController+PresentAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89762B3B20711198001AE3E7 /* UIViewController+PresentAlert.swift */; };
 		89762B7A20711C30001AE3E7 /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89762B7920711C30001AE3E7 /* UIView+Utils.swift */; };
@@ -20,8 +20,6 @@
 		89A39104207048FF0095EEB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89A39102207048FF0095EEB4 /* Main.storyboard */; };
 		89A39106207049000095EEB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89A39105207049000095EEB4 /* Assets.xcassets */; };
 		89A39109207049000095EEB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89A39107207049000095EEB4 /* LaunchScreen.storyboard */; };
-		89A39114207049000095EEB4 /* mapsearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A39113207049000095EEB4 /* mapsearchTests.swift */; };
-		89A3911F207049000095EEB4 /* mapsearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A3911E207049000095EEB4 /* mapsearchUITests.swift */; };
 		89A3912F20704EF80095EEB4 /* R.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A3912E20704EF80095EEB4 /* R.swift */; };
 		89C18E0820756A4900A5A58B /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C18E0720756A4900A5A58B /* MapView.swift */; };
 		89DCCDD62071467F002EA345 /* SearchLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DCCDD52071467F002EA345 /* SearchLocationViewController.swift */; };
@@ -41,13 +39,6 @@
 			remoteGlobalIDString = 89A390F8207048FF0095EEB4;
 			remoteInfo = mapsearch;
 		};
-		89A3911B207049000095EEB4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 89A390F1207048FF0095EEB4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 89A390F8207048FF0095EEB4;
-			remoteInfo = mapsearch;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +49,7 @@
 		890E10272071855100C903C3 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		890E102D2071A6C900C903C3 /* UIView+Animate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Animate.swift"; sourceTree = "<group>"; };
 		890E102F2071AFE200C903C3 /* LocationStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationStorage.swift; sourceTree = "<group>"; };
+		897197402078E9DF00ACEAAB /* LocationsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsTests.swift; sourceTree = "<group>"; };
 		89762B3820710AAA001AE3E7 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		89762B3B20711198001AE3E7 /* UIViewController+PresentAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+PresentAlert.swift"; sourceTree = "<group>"; };
 		89762B7920711C30001AE3E7 /* UIView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
@@ -70,11 +62,7 @@
 		89A39108207049000095EEB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89A3910A207049000095EEB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89A3910F207049000095EEB4 /* mapsearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mapsearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		89A39113207049000095EEB4 /* mapsearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapsearchTests.swift; sourceTree = "<group>"; };
 		89A39115207049000095EEB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		89A3911A207049000095EEB4 /* mapsearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mapsearchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		89A3911E207049000095EEB4 /* mapsearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapsearchUITests.swift; sourceTree = "<group>"; };
-		89A39120207049000095EEB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89A3912E20704EF80095EEB4 /* R.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.swift; sourceTree = "<group>"; };
 		89C18E0720756A4900A5A58B /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		89DCCDD52071467F002EA345 /* SearchLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLocationViewController.swift; sourceTree = "<group>"; };
@@ -106,14 +94,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B377B151CD8825C09659EF30 /* Pods_mapsearchTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		89A39117207049000095EEB4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6631CD56C5E727FD8CCFFD36 /* Pods_mapsearchUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,13 +132,21 @@
 			name = Storage;
 			sourceTree = "<group>";
 		};
-		89762B3A20711186001AE3E7 /* Utils */ = {
+		897197392078D66600ACEAAB /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				89E9303E20763EF800DAE3B7 /* String+Localized.swift */,
 				890E102D2071A6C900C903C3 /* UIView+Animate.swift */,
 				89762B7920711C30001AE3E7 /* UIView+Utils.swift */,
 				89762B3B20711198001AE3E7 /* UIViewController+PresentAlert.swift */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		89762B3A20711186001AE3E7 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				897197392078D66600ACEAAB /* UI */,
+				89E9303E20763EF800DAE3B7 /* String+Localized.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -188,7 +176,6 @@
 			children = (
 				89A390FB207048FF0095EEB4 /* MapSearch */,
 				89A39112207049000095EEB4 /* mapsearchTests */,
-				89A3911D207049000095EEB4 /* mapsearchUITests */,
 				89A390FA207048FF0095EEB4 /* Products */,
 				0AC5DD27B71A2EAC331D65C9 /* Pods */,
 				94F18A9D79D12B401FDA000F /* Frameworks */,
@@ -200,7 +187,6 @@
 			children = (
 				89A390F9207048FF0095EEB4 /* mapsearch.app */,
 				89A3910F207049000095EEB4 /* mapsearchTests.xctest */,
-				89A3911A207049000095EEB4 /* mapsearchUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -223,19 +209,10 @@
 		89A39112207049000095EEB4 /* mapsearchTests */ = {
 			isa = PBXGroup;
 			children = (
-				89A39113207049000095EEB4 /* mapsearchTests.swift */,
+				897197402078E9DF00ACEAAB /* LocationsTests.swift */,
 				89A39115207049000095EEB4 /* Info.plist */,
 			);
 			path = mapsearchTests;
-			sourceTree = "<group>";
-		};
-		89A3911D207049000095EEB4 /* mapsearchUITests */ = {
-			isa = PBXGroup;
-			children = (
-				89A3911E207049000095EEB4 /* mapsearchUITests.swift */,
-				89A39120207049000095EEB4 /* Info.plist */,
-			);
-			path = mapsearchUITests;
 			sourceTree = "<group>";
 		};
 		89A3912C20704EBA0095EEB4 /* Supporting Files */ = {
@@ -318,27 +295,6 @@
 			productReference = 89A3910F207049000095EEB4 /* mapsearchTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		89A39119207049000095EEB4 /* mapsearchUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 89A39129207049000095EEB4 /* Build configuration list for PBXNativeTarget "mapsearchUITests" */;
-			buildPhases = (
-				ABD63C1691ADA0774E9C51A9 /* [CP] Check Pods Manifest.lock */,
-				89A39116207049000095EEB4 /* Sources */,
-				89A39117207049000095EEB4 /* Frameworks */,
-				89A39118207049000095EEB4 /* Resources */,
-				421DB942D7D64A590C60B67F /* [CP] Embed Pods Frameworks */,
-				DE02B205CBEE9D6AC2FD5CA2 /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				89A3911C207049000095EEB4 /* PBXTargetDependency */,
-			);
-			name = mapsearchUITests;
-			productName = mapsearchUITests;
-			productReference = 89A3911A207049000095EEB4 /* mapsearchUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -353,10 +309,6 @@
 						CreatedOnToolsVersion = 9.3;
 					};
 					89A3910E207049000095EEB4 = {
-						CreatedOnToolsVersion = 9.3;
-						TestTargetID = 89A390F8207048FF0095EEB4;
-					};
-					89A39119207049000095EEB4 = {
 						CreatedOnToolsVersion = 9.3;
 						TestTargetID = 89A390F8207048FF0095EEB4;
 					};
@@ -378,7 +330,6 @@
 			targets = (
 				89A390F8207048FF0095EEB4 /* mapsearch */,
 				89A3910E207049000095EEB4 /* mapsearchTests */,
-				89A39119207049000095EEB4 /* mapsearchUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -396,13 +347,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		89A3910D207049000095EEB4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		89A39118207049000095EEB4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -446,21 +390,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		421DB942D7D64A590C60B67F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-mapsearchUITests/Pods-mapsearchUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5229013B71647DB7381B8125 /* [CP] Embed Pods Frameworks */ = {
@@ -517,39 +446,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-mapsearchTests/Pods-mapsearchTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		ABD63C1691ADA0774E9C51A9 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-mapsearchUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DE02B205CBEE9D6AC2FD5CA2 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-mapsearchUITests/Pods-mapsearchUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		F11E758B8442B9F8391C8A46 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -594,15 +490,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89A39114207049000095EEB4 /* mapsearchTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		89A39116207049000095EEB4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				89A3911F207049000095EEB4 /* mapsearchUITests.swift in Sources */,
+				897197412078E9DF00ACEAAB /* LocationsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,11 +501,6 @@
 			isa = PBXTargetDependency;
 			target = 89A390F8207048FF0095EEB4 /* mapsearch */;
 			targetProxy = 89A39110207049000095EEB4 /* PBXContainerItemProxy */;
-		};
-		89A3911C207049000095EEB4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 89A390F8207048FF0095EEB4 /* mapsearch */;
-			targetProxy = 89A3911B207049000095EEB4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -850,48 +733,6 @@
 			};
 			name = Release;
 		};
-		89A3912A207049000095EEB4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D7B95DFF88255E1FE14C08FD /* Pods-mapsearchUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = E3MCCN9MF9;
-				INFOPLIST_FILE = mapsearchUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = fr.poc.seraphindesumeur.mapsearchUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = mapsearch;
-			};
-			name = Debug;
-		};
-		89A3912B207049000095EEB4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9B2F8F900B28413743817D06 /* Pods-mapsearchUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = E3MCCN9MF9;
-				INFOPLIST_FILE = mapsearchUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = fr.poc.seraphindesumeur.mapsearchUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = mapsearch;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -918,15 +759,6 @@
 			buildConfigurations = (
 				89A39127207049000095EEB4 /* Debug */,
 				89A39128207049000095EEB4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		89A39129207049000095EEB4 /* Build configuration list for PBXNativeTarget "mapsearchUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				89A3912A207049000095EEB4 /* Debug */,
-				89A3912B207049000095EEB4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

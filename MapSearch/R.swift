@@ -23,8 +23,4 @@ struct R {
         static let searchLocationPlaceholder = "location-search".localized
     }
     
-    struct Images {
-        static let mapMarker = "MapMarker"
-    }
-    
 }

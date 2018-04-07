@@ -6,7 +6,6 @@
 //  Copyright © 2018 Seraphin DESUMEUR. All rights reserved.
 //
 
-import Foundation
 import MapboxGeocoder
 
 struct Location {
@@ -108,6 +107,8 @@ extension Location: Equatable {
     static func == (lhs: Location, rhs: Location) -> Bool {
         return
             lhs.name == rhs.name &&
+                lhs.latitude == rhs.latitude &&
+                lhs.longitude == rhs.longitude &&
                 lhs.city == rhs.city &&
                 lhs.street == rhs.street &&
                 lhs.postalCode == rhs.postalCode &&

@@ -6,19 +6,22 @@
 //  Copyright © 2018 Seraphin DESUMEUR. All rights reserved.
 //
 
-import Foundation
-
 final class DataManager {
     
     private let locationService: LocationService
     private let locationStorage: LocationStorage
     
-    init() {
+    // Use static var instead of global variables to avoid cluttering the global namespace.
+    // Handling data must only made by this singleton.
+    static let shared = DataManager()
+
+    private init() {
         locationService = LocationService()
         locationStorage = LocationStorage()
     }
     
-    func searchLocations(query: String, completion:@escaping ([Location]?) -> Void) {
+    func searchLocations(query: String,
+                         completion:@escaping ([Location]?) -> Void) {
         
         guard !query.isEmpty else {
             completion(nil)

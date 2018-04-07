@@ -8,12 +8,9 @@
 
 import UIKit
 
-let dataManager = (UIApplication.shared.delegate as! AppDelegate).dataManager
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    let dataManager = DataManager()
     var window: UIWindow?
     
     func application(_ application: UIApplication,

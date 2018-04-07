@@ -6,12 +6,12 @@
 //  Copyright © 2018 Seraphin DESUMEUR. All rights reserved.
 //
 
-import Foundation
 import MapboxGeocoder
 
 final class LocationService {
     
-    func searchLocations(_ query: String, completion: @escaping ([Location]?) -> Void) {
+    func searchLocations(_ query: String,
+                         completion: @escaping ([Location]?) -> Void) {
         
         let options = ForwardGeocodeOptions(query: query)
         
