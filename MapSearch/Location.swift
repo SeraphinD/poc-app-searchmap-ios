@@ -18,7 +18,7 @@ struct Location {
     let postalCode: String?
     let city: String?
     
-    var stored = false
+    private(set) var stored = false
     
     var printableStreet: String? {
         switch (street, number) {
@@ -100,11 +100,12 @@ extension Location {
         self.number = number
         self.city = city
         self.postalCode = postalCode
+        self.stored = true
     }
 }
 
 extension Location: Equatable {
-    static func == (lhs: Location, rhs: Location) -> Bool {
+    static func ==(lhs: Location, rhs: Location) -> Bool {
         return
             lhs.name == rhs.name &&
                 lhs.latitude == rhs.latitude &&
