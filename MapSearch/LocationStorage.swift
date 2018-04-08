@@ -30,7 +30,6 @@ final class LocationStorage {
     
     func getStoredLocations() -> [Location]? {
         guard let locationsData = userDefaults.object(forKey: StorageKey.locations) as? [Data] else { return nil }
-        var locations = locationsData.compactMap { return Location(data: $0) }
-        return locations
+        return locationsData.compactMap { Location(data: $0) }
     }
 }

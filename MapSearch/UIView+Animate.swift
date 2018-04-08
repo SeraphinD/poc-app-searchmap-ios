@@ -13,7 +13,12 @@ extension UIView {
     func animateFromBottom(delay: Double = 0) {
         alpha = 0.6
         transform = transform.translatedBy(x: 0.0, y: 150.0)
-        UIView.animate(withDuration: 0.2, delay: delay, animations: {
+        UIView.animate(withDuration: 0.6,
+                       delay: delay,
+                       usingSpringWithDamping: 0.7,
+                       initialSpringVelocity: 1,
+                       options: .curveEaseInOut,
+                       animations: {
             self.alpha = 1
             self.transform = .identity
         })
