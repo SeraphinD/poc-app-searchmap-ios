@@ -122,12 +122,7 @@ final class MapViewController: UIViewController {
 
 extension MapViewController: MapViewDelegate {
     
-    func regionWillChange() {
-        locationDetailView.hideFromTop()
-    }
-    
-    func regionDidChange(latitude: Double, longitude: Double) {
-         // Get location only if location has been authorized to avoid storing default map location.
+    func mapView(_ mapView: MapView, regionDidChange latitude: Double, longitude: Double) {
         guard locInitialized else {
             return
         }
@@ -135,6 +130,11 @@ extension MapViewController: MapViewDelegate {
                                                     mapView.centerCoordinate.longitude)) { location in
                                                         self.location = location
         }
+    }
+    
+    
+    func mapViewRegionWillChange(_ mapView: MapView) {
+        locationDetailView.hideFromTop()
     }
 }
 

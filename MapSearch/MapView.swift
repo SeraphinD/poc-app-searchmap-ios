@@ -10,8 +10,8 @@ import Foundation
 import Mapbox
 
 @objc protocol MapViewDelegate {
-    func regionWillChange()
-    func regionDidChange(latitude: Double, longitude: Double)
+    func mapViewRegionWillChange(_ mapView: MapView)
+    func mapView(_ mapView: MapView, regionDidChange latitude: Double, longitude: Double)
 }
 
 final class MapView: UIView {
@@ -55,11 +55,12 @@ final class MapView: UIView {
 extension MapView: MGLMapViewDelegate {
     
     func mapView(_ mapView: MGLMapView, regionWillChangeAnimated animated: Bool) {
-        delegate?.regionWillChange()
+        delegate?.mapViewRegionWillChange(self)
     }
     
     func mapView(_ mapView: MGLMapView, regionDidChangeWith reason: MGLCameraChangeReason, animated: Bool) {
-        delegate?.regionDidChange(latitude: mapView.centerCoordinate.latitude,
-                                  longitude: mapView.centerCoordinate.longitude)
+        delegate?.mapView(self,
+                          regionDidChange: mapView.centerCoordinate.latitude,
+                          longitude: mapView.centerCoordinate.longitude)
     }
 }
