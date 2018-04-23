@@ -20,4 +20,6 @@ This project was a way for me to test an architecture with a multiple layer Mode
 
 ### ✅ Coverage
 
-<img src="https://s18.postimg.org/v9oy50lnd/Map_Search_Test_Coverage.png" />
+<p align="center">
+    <img src="https://preview.ibb.co/egUQBn/Map_Search_Test_Coverage.png" alt="Map Search Test Coverage">
+</p>
